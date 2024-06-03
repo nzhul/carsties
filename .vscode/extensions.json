@@ -1,3 +1,7 @@
 {
-  "recommendations": ["patcx.vscode-nuget-gallery"]
+  "recommendations": [
+    "patcx.vscode-nuget-gallery",
+    "mongodb.mongodb-vscode",
+    "ckolkman.vscode-postgres"
+  ]
 }

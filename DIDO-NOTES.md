@@ -7,3 +7,6 @@
 6. `docker compose up -d` > starts the docker-compose file in detached mode, this will create and run postgresql database in docker.
    1. NOTE: Please note that we intentionally changed the port from 5432 to 5433 so it is not conflicting with any other postgresql database running on the machine.
 7. `dotnet ef database update` > updates the database with the latest migration
+8. `dotnet new webapi -o src/SearchService` > creates a new webapi project in the src/SearchService folder
+9. `dotnet sln add src/SearchService` > adds the SearchService project to the solution
+10. `git reset --hard 02e183d` > resets the git repository to the commit with the hash 02e183d
