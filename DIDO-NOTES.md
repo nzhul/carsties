@@ -10,3 +10,5 @@
 8. `dotnet new webapi -o src/SearchService` > creates a new webapi project in the src/SearchService folder
 9. `dotnet sln add src/SearchService` > adds the SearchService project to the solution
 10. `git reset --hard 02e183d` > resets the git repository to the commit with the hash 02e183d
+11. `docker volume list` > lists all the docker volumes
+12. `docker volume rm <volume-name>` > removes the docker volume

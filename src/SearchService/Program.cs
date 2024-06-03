@@ -4,6 +4,7 @@ using MongoDB.Entities;
 using SearchService;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient<AuctionSvcHttpClient>();
 
 builder.Services.AddControllers();
 
