@@ -12,3 +12,7 @@
 10. `git reset --hard 02e183d` > resets the git repository to the commit with the hash 02e183d
 11. `docker volume list` > lists all the docker volumes
 12. `docker volume rm <volume-name>` > removes the docker volume
+13. You can access rabbitmq management console at http://localhost:15672 > username: guest, password: guest
+14. https://masstransit.io/ > MassTransit is a free, open-source distributed application framework for .NET (dido: Imagine EntityFramework for messaging)
+15. `dotnet new classlib -o src/Contracts` > creates a new class library project in the src/Contracts folder
+16. `dotnet add reference ../../src/Contracts/` > adds a reference to the Contracts project in the SearchService project
