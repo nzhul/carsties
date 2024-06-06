@@ -16,3 +16,6 @@
 14. https://masstransit.io/ > MassTransit is a free, open-source distributed application framework for .NET (dido: Imagine EntityFramework for messaging)
 15. `dotnet new classlib -o src/Contracts` > creates a new class library project in the src/Contracts folder
 16. `dotnet add reference ../../src/Contracts/` > adds a reference to the Contracts project in the SearchService project
+17. `docker volume ls -q | xargs docker volume rm` > removes all the docker volumes
+18. `docker image ls -q | xargs docker image rm` > removes all the docker images
+19. 
