@@ -18,4 +18,4 @@
 16. `dotnet add reference ../../src/Contracts/` > adds a reference to the Contracts project in the SearchService project
 17. `docker volume ls -q | xargs docker volume rm` > removes all the docker volumes
 18. `docker image ls -q | xargs docker image rm` > removes all the docker images
-19. 
+19. `docker compose build auction-svc` > builds the auction-svc service in the docker-compose file
