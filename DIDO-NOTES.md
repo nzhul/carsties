@@ -19,3 +19,4 @@
 17. `docker volume ls -q | xargs docker volume rm` > removes all the docker volumes
 18. `docker image ls -q | xargs docker image rm` > removes all the docker images
 19. `docker compose build auction-svc` > builds the auction-svc service in the docker-compose file
+20. `Ctrl + Shift + P` > .NET: Generate Assets for Build and Debug > generates the launch.json and tasks.json files
