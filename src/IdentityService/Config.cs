@@ -15,6 +15,7 @@ public static class Config
         new ApiScope[]
         {
             new ApiScope("auctionApp", "Auction app full access"),
+            new ApiScope("dis_api", "DIS API full access"),
         };
 
     public static IEnumerable<Client> Clients =>
@@ -39,6 +40,28 @@ public static class Config
                 RedirectUris = {"http://localhost:3000/api/auth/callback/id-server"},
                 AllowOfflineAccess = true,
                 AllowedScopes = {"openid", "profile", "auctionApp"},
+                AccessTokenLifetime = 3600*24*30,
+                AlwaysIncludeUserClaimsInIdToken = true,
+            },
+            new Client
+            {
+                ClientId = "dis_postman",
+                ClientName = "dis_postman",
+                AllowedScopes = {"openid", "profile", "dis_api"},
+                RedirectUris = {"https://www.getpostman.com/oauth2/callback"},
+                ClientSecrets = new[] {new Secret("NotASecret".Sha256())},
+                AllowedGrantTypes = {GrantType.ResourceOwnerPassword}
+            },
+            new Client
+            {
+                ClientId = "dis_ui",
+                ClientName = "dis_ui",
+                RequireClientSecret = false,
+                AllowedGrantTypes = GrantTypes.Code,
+                RedirectUris = {"http://localhost:3000/callback"},
+                PostLogoutRedirectUris = {"http://localhost:3000/"},
+                AllowedCorsOrigins = {"http://localhost:3000"},
+                AllowedScopes = {"openid", "profile", "dis_api"},
                 AccessTokenLifetime = 3600*24*30,
                 AlwaysIncludeUserClaimsInIdToken = true,
             }
