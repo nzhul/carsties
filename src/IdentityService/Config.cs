@@ -59,7 +59,7 @@ public static class Config
                 RequireClientSecret = false,
                 AllowedGrantTypes = GrantTypes.Code,
                 RedirectUris = {"http://localhost:3000/callback"},
-                PostLogoutRedirectUris = {"http://localhost:3000/"},
+                PostLogoutRedirectUris = {"http://localhost:3000/signout-callback-oidc"},
                 AllowedCorsOrigins = {"http://localhost:3000"},
                 AllowedScopes = {"openid", "profile", "dis_api"},
                 AccessTokenLifetime = 3600*24*30,
