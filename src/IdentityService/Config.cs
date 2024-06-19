@@ -54,13 +54,26 @@ public static class Config
             },
             new Client
             {
-                ClientId = "dis_ui",
-                ClientName = "dis_ui",
+                ClientId = "dis_ui_localhost",
+                ClientName = "dis_ui_localhost",
                 RequireClientSecret = false,
                 AllowedGrantTypes = GrantTypes.Code,
                 RedirectUris = {"http://localhost:3000/callback"},
                 PostLogoutRedirectUris = {"http://localhost:3000/signout-callback-oidc"},
                 AllowedCorsOrigins = {"http://localhost:3000"},
+                AllowedScopes = {"openid", "profile", "dis_api"},
+                AccessTokenLifetime = 3600*24*30,
+                AlwaysIncludeUserClaimsInIdToken = true,
+            },
+            new Client
+            {
+                ClientId = "dis_ui_dev",
+                ClientName = "dis_ui_dev",
+                RequireClientSecret = false,
+                AllowedGrantTypes = GrantTypes.Code,
+                RedirectUris = {"https://dis-dev.milestonesys.xyz/callback"},
+                PostLogoutRedirectUris = {"https://dis-dev.milestonesys.xyz/signout-callback-oidc"},
+                AllowedCorsOrigins = {"https://dis-dev.milestonesys.xyz"},
                 AllowedScopes = {"openid", "profile", "dis_api"},
                 AccessTokenLifetime = 3600*24*30,
                 AlwaysIncludeUserClaimsInIdToken = true,
