@@ -11,17 +11,20 @@ COPY src/GatewayService/GatewayService.csproj src/GatewayService/GatewayService.
 COPY src/BiddingService/BiddingService.csproj src/BiddingService/BiddingService.csproj
 COPY src/Contracts/Contracts.csproj src/Contracts/Contracts.csproj
 COPY src/IdentityService/IdentityService.csproj src/IdentityService/IdentityService.csproj
+COPY tests/AuctionService.UnitTests/AuctionService.UnitTests.csproj tests/AuctionService.UnitTests/AuctionService.UnitTests.csproj
+COPY tests/AuctionService.IntegrationTests/AuctionService.IntegrationTests.csproj tests/AuctionService.IntegrationTests/AuctionService.IntegrationTests.csproj
 
 # Restore package deps
 RUN dotnet restore carsties.sln
 
 # Copy the app folders over
-COPY src/GatewayService src/GatewayService
-WORKDIR /app/src/GatewayService
+COPY src/BiddingService src/BiddingService
+COPY src/Contracts src/Contracts
+WORKDIR /app/src/BiddingService
 RUN dotnet publish -c Release -o /app/src/out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app/src/out .
-ENTRYPOINT [ "dotnet", "GatewayService.dll" ]
+ENTRYPOINT [ "dotnet", "BiddingService.dll" ]
