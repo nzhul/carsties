@@ -20,3 +20,5 @@
 18. `docker image ls -q | xargs docker image rm` > removes all the docker images
 19. `docker compose build auction-svc` > builds the auction-svc service in the docker-compose file
 20. `Ctrl + Shift + P` > .NET: Generate Assets for Build and Debug > generates the launch.json and tasks.json files
+21. `gRPC` > gRPC is a high-performance, open-source universal RPC framework. In this course it is used to communicate between the services.
+    1.  Basically this is a alternative for REST API (HttpClient). It is 8x faster and more secure.
